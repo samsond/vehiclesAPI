@@ -6,7 +6,7 @@ import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 
 /**
  * Creates a Spring Boot Application to run the Pricing Service.
- * TODO: Convert the application from a REST API to a microservice.
+ * COMPLETED: Convert the application from a REST API to a microservice.
  */
 @SpringBootApplication
 @EnableDiscoveryClient
