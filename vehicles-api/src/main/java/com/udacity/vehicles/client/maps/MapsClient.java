@@ -7,7 +7,6 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
 import org.springframework.web.reactive.function.client.WebClient;
-import reactor.core.publisher.Mono;
 
 /**
  * Implements a class to interface with the Maps Client for location data.
@@ -34,7 +33,7 @@ public class MapsClient {
      */
     public Location getAddress(Location location) {
         try {
-            Mono<Address> address = client
+            Address address = client
                     .get()
                     .uri(uriBuilder -> uriBuilder
                             .path("/maps/")
@@ -42,7 +41,7 @@ public class MapsClient {
                             .queryParam("lon", location.getLon())
                             .build()
                     )
-                    .retrieve().bodyToMono(Address.class);
+                    .retrieve().bodyToMono(Address.class).block();
 
             mapper.map(Objects.requireNonNull(address), location);
 

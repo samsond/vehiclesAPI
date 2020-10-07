@@ -60,9 +60,9 @@ public class VehiclesApiApplication {
      * @param endpoint where to communicate for the pricing API
      * @return created pricing endpoint
      */
-    @Bean(name="pricing")
-    public WebClient webClientPricing(@Value("${pricing.endpoint}") String endpoint) {
-        return WebClient.create(endpoint);
-    }
+//    @Bean(name="pricing")
+//    public WebClient webClientPricing(@Value("${pricing.endpoint}") String endpoint) {
+//        return WebClient.create(endpoint);
+//    }
 
 }
